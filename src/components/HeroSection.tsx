@@ -66,7 +66,7 @@ const HeroSection = () => {
             {/* Profile image placeholder - replace with actual image when available */}
             <div className="w-full h-full rounded-full overflow-hidden bg-secondary flex items-center justify-center border-4 border-primary/20">
               <img
-                src="src\assets\ProfileImg.jpg"
+                src="src/static/assets/ProfileImg.jpg"
                 alt="Yash Bhalodiya"
                 className="w-full h-full object-cover"
               />
