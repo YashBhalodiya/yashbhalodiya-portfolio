@@ -3,9 +3,9 @@ import emailjs from "emailjs-com";
 import { Mail, Phone, Linkedin, Github } from "lucide-react";
 import { env } from "process";
 
-const SERVICE_ID = process.env.SERVICE_ID;
-const TEMPLATE_ID = process.env.TEMPLATE_ID;
-const USER_ID = process.env.USER_ID;
+const SERVICE_ID = import.meta.env.VITE_SERVICE_ID;
+const TEMPLATE_ID = import.meta.env.VITE_TEMPLATE_ID;
+const USER_ID = import.meta.env.VITE_USER_ID;
 
 const ContactSection = () => {
   const [name, setName] = useState("");
