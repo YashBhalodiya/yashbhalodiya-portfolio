@@ -1,7 +1,7 @@
 import { useState, FormEvent, useEffect } from "react";
 import emailjs from "emailjs-com";
+import { toast } from "sonner";
 import { Mail, Phone, Linkedin, Github } from "lucide-react";
-import { env } from "process";
 
 const SERVICE_ID = import.meta.env.VITE_SERVICE_ID;
 const TEMPLATE_ID = import.meta.env.VITE_TEMPLATE_ID;
@@ -44,7 +44,13 @@ const ContactSection = () => {
     emailjs
       .send(SERVICE_ID, TEMPLATE_ID, templateParams, USER_ID)
       .then(() => {
-        alert("Message sent successfully!");
+        toast.success("Your message has been sent successfully!", {
+          description: "I'll get back to you soon.",
+          style: {
+            color: "green",
+            backgroundColor: "whitesmoke",
+          },
+        });
         setName("");
         setEmail("");
         setMessage("");
@@ -52,7 +58,9 @@ const ContactSection = () => {
       })
       .catch((error) => {
         console.error("EmailJS Error:", error);
-        alert("Something went wrong. Please try again later.");
+        toast.error("Something went wrong!", {
+          description: "Please try again later.",
+        });
         setIsSubmitting(false);
       });
   };
