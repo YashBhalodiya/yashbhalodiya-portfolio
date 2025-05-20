@@ -1,4 +1,3 @@
-// AnimatedSkillsSection.tsx
 "use client";
 
 import { motion } from "framer-motion";
@@ -37,17 +36,20 @@ const categories = [
     skills: [
       { name: "Node.js", icon: <FaNodeJs className="text-green-500" /> },
       { name: "Git", icon: <FaGitAlt className="text-orange-500" /> },
-      { name: "GitHub", icon: <FaGithub className="text-white" /> },
+      { name: "GitHub", icon: <FaGithub className="text-black dark:text-white" /> },
     ],
   },
 ];
 
 export default function AnimatedSkillsSection() {
   return (
-    <section id="skills" className="py-16 bg-[#0b1120] text-white">
+    <section
+      id="skills"
+      className="py-16 bg-white text-black dark:bg-[#0b1120] dark:text-white transition-colors duration-300"
+    >
       <div className="max-w-7xl mx-auto px-4">
         <div className="text-center mb-12">
-          <p className="text-blue-400 font-medium">What I Know</p>
+          <p className="text-blue-500 font-medium">What I Know</p>
           <h2 className="text-4xl font-bold mb-2">My Skills</h2>
           <div className="h-1 w-20 bg-blue-500 mx-auto rounded-full"></div>
         </div>
@@ -60,7 +62,7 @@ export default function AnimatedSkillsSection() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.2 }}
               viewport={{ once: true }}
-              className="bg-[#111827] border border-[#1f2937] p-6 rounded-2xl shadow-lg hover:shadow-blue-600/20 transition-shadow duration-300"
+              className="bg-gray-100 dark:bg-[#111827] border border-gray-300 dark:border-[#1f2937] p-6 rounded-2xl shadow-lg hover:shadow-blue-600/20 transition-shadow duration-300"
             >
               <div className="flex items-center gap-3 mb-4">
                 {category.icon}
@@ -71,7 +73,7 @@ export default function AnimatedSkillsSection() {
                   <motion.div
                     key={i}
                     whileHover={{ scale: 1.05 }}
-                    className="bg-[#1f2937] rounded-xl p-3 flex flex-col items-center justify-center text-sm text-center shadow hover:shadow-blue-500/30 transition"
+                    className="bg-gray-200 dark:bg-[#1f2937] rounded-xl p-3 flex flex-col items-center justify-center text-sm text-center shadow hover:shadow-blue-500/30 transition"
                   >
                     <div className="text-2xl mb-2">{skill.icon}</div>
                     {skill.name}

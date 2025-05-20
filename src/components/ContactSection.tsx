@@ -1,5 +1,11 @@
 import { useState, FormEvent, useEffect } from "react";
+import emailjs from "emailjs-com";
 import { Mail, Phone, Linkedin, Github } from "lucide-react";
+import { env } from "process";
+
+const SERVICE_ID = process.env.SERVICE_ID;
+const TEMPLATE_ID = process.env.TEMPLATE_ID;
+const USER_ID = process.env.USER_ID;
 
 const ContactSection = () => {
   const [name, setName] = useState("");
@@ -29,14 +35,26 @@ const ContactSection = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
-    setTimeout(() => {
-      setName("");
-      setEmail("");
-      setMessage("");
-      setIsSubmitting(false);
-      alert("This is a demo form. In a real application, this would send your message to Yash.");
-    }, 1500);
+    const templateParams = {
+      from_name: name,
+      from_email: email,
+      message: message,
+    };
+
+    emailjs
+      .send(SERVICE_ID, TEMPLATE_ID, templateParams, USER_ID)
+      .then(() => {
+        alert("Message sent successfully!");
+        setName("");
+        setEmail("");
+        setMessage("");
+        setIsSubmitting(false);
+      })
+      .catch((error) => {
+        console.error("EmailJS Error:", error);
+        alert("Something went wrong. Please try again later.");
+        setIsSubmitting(false);
+      });
   };
 
   const contactInfo = [
@@ -73,10 +91,19 @@ const ContactSection = () => {
 
         <div className="grid md:grid-cols-2 gap-12">
           {/* Contact Form */}
-          <div className={`transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
+          <div
+            className={`transition-all duration-700 ${
+              isVisible
+                ? "opacity-100 translate-y-0"
+                : "opacity-0 translate-y-10"
+            }`}
+          >
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
-                <label htmlFor="name" className="block text-sm font-medium mb-2">
+                <label
+                  htmlFor="name"
+                  className="block text-sm font-medium mb-2"
+                >
                   Your Name
                 </label>
                 <input
@@ -91,7 +118,10 @@ const ContactSection = () => {
               </div>
 
               <div>
-                <label htmlFor="email" className="block text-sm font-medium mb-2">
+                <label
+                  htmlFor="email"
+                  className="block text-sm font-medium mb-2"
+                >
                   Your Email
                 </label>
                 <input
@@ -106,7 +136,10 @@ const ContactSection = () => {
               </div>
 
               <div>
-                <label htmlFor="message" className="block text-sm font-medium mb-2">
+                <label
+                  htmlFor="message"
+                  className="block text-sm font-medium mb-2"
+                >
                   Your Message
                 </label>
                 <textarea
@@ -132,8 +165,16 @@ const ContactSection = () => {
 
           {/* Contact Info */}
           <div>
-            <div className={`glass rounded-xl p-8 transition-all duration-700 delay-300 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
-              <h3 className="text-xl font-semibold mb-6">Contact Information</h3>
+            <div
+              className={`glass rounded-xl p-8 transition-all duration-700 delay-300 ${
+                isVisible
+                  ? "opacity-100 translate-y-0"
+                  : "opacity-0 translate-y-10"
+              }`}
+            >
+              <h3 className="text-xl font-semibold mb-6">
+                Contact Information
+              </h3>
               <div className="space-y-6">
                 {contactInfo.map((item, index) => (
                   <div key={index} className="flex items-center gap-4">
