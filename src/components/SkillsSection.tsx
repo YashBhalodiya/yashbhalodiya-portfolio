@@ -10,16 +10,6 @@ import { DiJava } from "react-icons/di";
 
 const categories = [
   {
-    title: "Frontend",
-    icon: <MdDeveloperMode size={24} className="text-blue-400" />,
-    skills: [
-      { name: "React", icon: <FaReact className="text-cyan-400" /> },
-      { name: "HTML", icon: <FaHtml5 className="text-orange-500" /> },
-      { name: "CSS", icon: <FaCss3Alt className="text-blue-500" /> },
-      { name: "JavaScript", icon: <SiJavascript className="text-yellow-400" /> },
-    ],
-  },
-  {
     title: "Mobile",
     icon: <TbDeviceMobileCode size={24} className="text-blue-400" />,
     skills: [
@@ -28,6 +18,16 @@ const categories = [
       { name: "Dart", icon: <SiDart className="text-blue-400" /> },
       { name: "Kotlin", icon: <SiKotlin className="text-green-500" /> },
       { name: "Java", icon: <DiJava className="text-red-600" /> },
+    ],
+  },
+  {
+    title: "Frontend",
+    icon: <MdDeveloperMode size={24} className="text-blue-400" />,
+    skills: [
+      { name: "React", icon: <FaReact className="text-cyan-400" /> },
+      { name: "HTML", icon: <FaHtml5 className="text-orange-500" /> },
+      { name: "CSS", icon: <FaCss3Alt className="text-blue-500" /> },
+      { name: "JavaScript", icon: <SiJavascript className="text-yellow-400" /> },
     ],
   },
   {

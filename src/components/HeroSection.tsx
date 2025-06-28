@@ -34,10 +34,10 @@ const HeroSection = () => {
             Yash <span className="text-primary">Bhalodiya</span>
           </h1>
           <h2 className="text-2xl md:text-3xl text-muted-foreground">
-            Frontend & Mobile App Developer
+            Mobile Application Developer
           </h2>
           <p className="text-lg max-w-md">
-            Passionate about crafting smooth, modern mobile apps with React Native, Flutter, and Android. Always exploring new tools & tech in mobile development.
+            Passionate about crafting smooth, modern mobile apps with React Native. Always exploring new tools & tech in mobile development.
 
           </p>
           <div className="flex flex-wrap gap-4">
