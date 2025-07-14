@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import bmiImage from "../assets/BMI.jpg";
 import WallpaperApp from "../assets/WallpaperApp.png";
+import NotesApp from "../assets/NotesApp.png";
 
 const PortfolioSection = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -39,7 +40,7 @@ const PortfolioSection = () => {
       title: "BMI Calculator",
       description:
         "A BMI (Body Mass Index) calculator application has three text fields that take your name, weight, and height, and then it calculates your BMI and displays the result on the screen.",
-      tags: ["Flutter", "Dart"],
+      tags: ["Flutter", "Dart", "Mobile", "Cross-Platform"],
       image: bmiImage,
       github: "https://github.com/YashBhalodiya/BMI_Calculator",
     },
@@ -47,15 +48,16 @@ const PortfolioSection = () => {
       title: "A Wallpaper App",
       description:
         "A Simple Wallpaper app using React Native Expo, and i have used API of the Pixabay to show the wallpapers",
-      tags: ["React Native", "Mobile"],
+      tags: ["React Native", "expo", "Typescript", "Mobile"],
       image: WallpaperApp,
       github: "https://github.com/YashBhalodiya/wallpaper-app",
     },
     {
-      title: "Project Three",
-      description: "Coming Soon",
-      tags: ["Flutter", "Firebase"],
-      image: "placeholder-project-3",
+      title: "Notes App",
+      description: "A beautiful, modern, and intuitive note-taking application built with React Native and Expo. Create, edit, search, and organize your thoughts with a clean and elegant interface.",
+      tags: ["React-Native", "Expo", "JavaScript", "AsyncStorage", "Mobile"],
+      image: NotesApp,
+      github: "https://github.com/YashBhalodiya/notes-app",
     },
   ];
 
@@ -64,7 +66,7 @@ const PortfolioSection = () => {
       <div className="container-custom">
         <div className="text-center mb-16">
           <p className="text-primary font-medium mb-2 text-lg">My Work</p>
-          <h2 className="mb-4 text-4xl md:text-5xl">Projects Coming Soon</h2>
+          <h2 className="mb-4 text-4xl md:text-5xl">Projects</h2>
           <div className="w-20 h-1 bg-primary mx-auto rounded-full"></div>
         </div>
 
@@ -81,26 +83,26 @@ const PortfolioSection = () => {
                   : "opacity-0 translate-y-10"
               }`}
             >
-              <div className="h-64 overflow-hidden relative">
+              <div className="h-80 overflow-hidden relative">
                 {typeof project.image === "string" &&
                 project.image.startsWith("placeholder") ? (
                   <div className="h-full bg-gradient-to-br from-blue-500/20 via-purple-500/20 to-pink-500/20 flex items-center justify-center">
                     <div className="text-center">
-                      <span className="text-6xl opacity-50 mb-4 block">
+                      <span className="text-8xl opacity-50 mb-4 block">
                         {project.image === "placeholder-project-3" && "🚀"}
                       </span>
-                      <p className="text-sm text-gray-600 dark:text-gray-400 font-medium">
+                      <p className="text-lg text-gray-600 dark:text-gray-400 font-medium">
                         Coming Soon
                       </p>
                     </div>
                   </div>
                 ) : (
                   <>
-                    <div className="absolute inset-0 bg-white dark:bg-gray-900 flex items-center justify-center p-6">
+                    <div className="absolute inset-0 bg-white dark:bg-gray-900 flex items-center justify-center p-8">
                       <img
                         src={project.image}
                         alt={project.title}
-                        className="max-w-full max-h-full object-contain transition-all duration-500 group-hover:scale-110 filter group-hover:brightness-110"
+                        className="max-w-full max-h-full object-contain transition-all duration-500 group-hover:scale-105 filter group-hover:brightness-110"
                         style={{
                           imageRendering: "crisp-edges",
                           WebkitImageSmoothing: "high",
@@ -198,7 +200,7 @@ const PortfolioSection = () => {
             <div className="p-0">
               {selectedProject.image &&
               !selectedProject.image.toString().startsWith("placeholder") ? (
-                <div className="h-80 bg-white dark:bg-gray-900 flex items-center justify-center p-8 border-b border-gray-200/20 dark:border-gray-700/30">
+                <div className="h-96 bg-white dark:bg-gray-900 flex items-center justify-center p-10 border-b border-gray-200/20 dark:border-gray-700/30">
                   <img
                     src={selectedProject.image}
                     alt={selectedProject.title}
@@ -211,7 +213,7 @@ const PortfolioSection = () => {
                   />
                 </div>
               ) : (
-                <div className="h-80 bg-gradient-to-br from-blue-500/20 via-purple-500/20 to-pink-500/20 flex items-center justify-center border-b border-gray-200/20 dark:border-gray-700/30">
+                <div className="h-96 bg-gradient-to-br from-blue-500/20 via-purple-500/20 to-pink-500/20 flex items-center justify-center border-b border-gray-200/20 dark:border-gray-700/30">
                   <div className="text-center">
                     <span className="text-8xl opacity-50 mb-4 block">
                       {selectedProject.image === "placeholder-project-3" && "🚀"}
