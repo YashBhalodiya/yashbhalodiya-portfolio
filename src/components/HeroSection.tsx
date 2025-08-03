@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { ChevronDown } from "lucide-react";
+import ProfileImg from "../assets/ProfileImg.jpg";
 
 const HeroSection = () => {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -66,7 +67,7 @@ const HeroSection = () => {
             {/* Profile image placeholder - replace with actual image when available */}
             <div className="w-full h-full rounded-full overflow-hidden bg-secondary flex items-center justify-center border-4 border-primary/20">
               <img
-                src="/ProfileImg.jpg"
+                src={ProfileImg}
                 alt="Yash Bhalodiya"
                 className="w-full h-full object-cover"
               />
