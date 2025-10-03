@@ -39,7 +39,6 @@ const HeroSection = () => {
           </h2>
           <p className="text-lg max-w-md">
             Passionate about crafting smooth, modern mobile apps with React Native. Always exploring new tools & tech in mobile development.
-
           </p>
           <div className="flex flex-wrap gap-4">
             <a
