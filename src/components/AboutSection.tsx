@@ -35,7 +35,7 @@ const AboutSection = () => {
       description: "Comprehensive study of computer engineering fundamentals",
     },
     {
-      year: "2024-2027 (Expected)",
+      year: "2024-2027",
       title: "B.Tech in Information Technology",
       institution: "Charotar University of Science and Technology",
       description: "Currently pursuing advanced studies in Information Technology",
