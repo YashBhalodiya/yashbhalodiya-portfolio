@@ -37,12 +37,19 @@ const PortfolioSection = () => {
 
   const projectPlaceholders = [
     {
-      title: "BMI Calculator",
+      title: "Digital Khatabook App",
       description:
-        "A BMI (Body Mass Index) calculator application has three text fields that take your name, weight, and height, and then it calculates your BMI and displays the result on the screen.",
-      tags: ["Flutter", "Dart", "Mobile", "Cross-Platform"],
+        "A React Native (Expo) mobile application for managing credit-based purchases, featuring role-based authentication, real-time Firestore data handling, and a clean, scalable architecture for small shop owners and customers.",
+      tags: ["React Native (Expo)", "JavaScript", "Firebase", "Cross-Platform", "Cloud Firestore"],
       image: bmiImage,
-      github: "https://github.com/YashBhalodiya/BMI_Calculator",
+      github: "https://github.com/YashBhalodiya/DigitalKhataBook",
+    },
+    {
+      title: "Notes App",
+      description: "A beautiful, modern, and intuitive note-taking application built with React Native and Expo. Create, edit, search, and organize your thoughts with a clean and elegant interface.",
+      tags: ["React-Native", "Expo", "JavaScript", "AsyncStorage", "Mobile"],
+      image: NotesApp,
+      github: "https://github.com/YashBhalodiya/notes-app",
     },
     {
       title: "A Wallpaper App",
@@ -51,13 +58,6 @@ const PortfolioSection = () => {
       tags: ["React Native", "expo", "Typescript", "Mobile"],
       image: WallpaperApp,
       github: "https://github.com/YashBhalodiya/wallpaper-app",
-    },
-    {
-      title: "Notes App",
-      description: "A beautiful, modern, and intuitive note-taking application built with React Native and Expo. Create, edit, search, and organize your thoughts with a clean and elegant interface.",
-      tags: ["React-Native", "Expo", "JavaScript", "AsyncStorage", "Mobile"],
-      image: NotesApp,
-      github: "https://github.com/YashBhalodiya/notes-app",
     },
   ];
 
