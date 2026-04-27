@@ -1,7 +1,19 @@
 import { useState, FormEvent, useEffect } from "react";
 import emailjs from "emailjs-com";
 import { toast } from "sonner";
-import { Mail, Phone, Linkedin, Github } from "lucide-react";
+import { Mail, Phone, Linkedin, Github, Twitter } from "lucide-react";
+
+const MediumIcon = ({ size = 20 }: { size?: number }) => (
+  <svg
+    width={size}
+    height={size}
+    viewBox="0 0 24 24"
+    fill="currentColor"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path d="M13.54 12a6.8 6.8 0 01-6.77 6.82A6.8 6.8 0 010 12a6.8 6.8 0 016.77-6.82A6.8 6.8 0 0113.54 12zM20.96 12c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42M24 12c0 3.11-.53 5.62-1.18 5.62-.66 0-1.18-2.51-1.18-5.62s.52-5.62 1.18-5.62C23.47 6.38 24 8.89 24 12z" />
+  </svg>
+);
 
 const SERVICE_ID = import.meta.env.VITE_SERVICE_ID;
 const TEMPLATE_ID = import.meta.env.VITE_TEMPLATE_ID;
@@ -228,6 +240,24 @@ const ContactSection = () => {
                     aria-label="GitHub"
                   >
                     <Github size={20} />
+                  </a>
+                  <a
+                    href="https://x.com/_yashbhalodiya"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary hover:bg-primary hover:text-primary-foreground transition-colors"
+                    aria-label="Twitter"
+                  >
+                    <Twitter size={20} />
+                  </a>
+                  <a
+                    href="https://medium.com/@YashBhalodiya"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary hover:bg-primary hover:text-primary-foreground transition-colors"
+                    aria-label="Medium"
+                  >
+                    <MediumIcon size={20} />
                   </a>
                 </div>
               </div>

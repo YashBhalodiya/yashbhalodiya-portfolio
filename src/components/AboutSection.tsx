@@ -60,26 +60,21 @@ const AboutSection = () => {
         <div className="grid md:grid-cols-2 gap-12 items-center">
           {/* Bio */}
           <div
-            className={`space-y-6 transition-all duration-700 ${
-              isVisible
-                ? "opacity-100 translate-y-0"
-                : "opacity-0 translate-y-10"
-            }`}
+            className={`space-y-6 transition-all duration-700 ${isVisible
+              ? "opacity-100 translate-y-0"
+              : "opacity-0 translate-y-10"
+              }`}
           >
             <h3 className="text-2xl font-semibold">
-              A passionate React Native developer crafting seamless mobile
-              experiences
+              Full Stack & Mobile Application Developer building scalable apps
             </h3>
+
             <p className="text-lg leading-relaxed">
-              I'm a React Native developer focused on building high-quality,
-              responsive, and intuitive mobile applications. I love turning
-              ideas into real-world apps that deliver smooth user experiences.
+              I build end-to-end applications across mobile and web, with a primary focus on developing high-performance mobile apps using React Native. I also create responsive frontend interfaces and scalable backend systems using modern technologies.
             </p>
+
             <p className="text-lg leading-relaxed">
-              Always eager to explore new tools and stay current with the latest
-              trends in mobile development, I strive to write clean, scalable,
-              and maintainable code while creating apps that feel native and
-              perform great.
+              I work with APIs, databases, and authentication to deliver complete, production-ready applications. My focus is on clean architecture, performance, and maintainable code to ensure reliable and scalable systems.
             </p>
             <div>
               <a
@@ -96,11 +91,10 @@ const AboutSection = () => {
             {timelineItems.map((item, index) => (
               <div
                 key={index}
-                className={`transition-all duration-700 delay-${index * 200} ${
-                  isVisible
-                    ? "opacity-100 translate-y-0"
-                    : "opacity-0 translate-y-10"
-                }`}
+                className={`transition-all duration-700 delay-${index * 200} ${isVisible
+                  ? "opacity-100 translate-y-0"
+                  : "opacity-0 translate-y-10"
+                  }`}
               >
                 <div className="absolute -left-3 w-6 h-6 rounded-full bg-primary"></div>
                 <div className="glass p-6 rounded-lg">

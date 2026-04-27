@@ -35,10 +35,10 @@ const HeroSection = () => {
             Yash <span className="text-primary">Bhalodiya</span>
           </h1>
           <h2 className="text-2xl md:text-3xl text-muted-foreground">
-            Mobile Application Developer
+            Mobile Application Developer & Full Stack Developer
           </h2>
           <p className="text-lg max-w-md">
-            Passionate about crafting smooth, modern mobile apps with React Native. Always exploring new tools & tech in mobile development.
+            I build cross-platform mobile apps using React Native and develop backend systems with Node.js and Express. Focused on creating scalable APIs, clean architecture, and smooth user experiences across mobile and web.
           </p>
           <div className="flex flex-wrap gap-4">
             <a

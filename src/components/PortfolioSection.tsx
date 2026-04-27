@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
-import bmiImage from "../assets/BMI.jpg";
+import DigitalKhata from "../assets/DigitalKhata.png";
 import WallpaperApp from "../assets/WallpaperApp.png";
 import NotesApp from "../assets/NotesApp.png";
+import UrlShortener from "../assets/UrlShortener.png";
 
 const PortfolioSection = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -41,7 +42,7 @@ const PortfolioSection = () => {
       description:
         "A React Native (Expo) mobile application for managing credit-based purchases, featuring role-based authentication, real-time Firestore data handling, and a clean, scalable architecture for small shop owners and customers.",
       tags: ["React Native (Expo)", "JavaScript", "Firebase", "Cross-Platform", "Cloud Firestore"],
-      image: bmiImage,
+      image: DigitalKhata,
       github: "https://github.com/YashBhalodiya/DigitalKhataBook",
     },
     {
@@ -59,6 +60,14 @@ const PortfolioSection = () => {
       image: WallpaperApp,
       github: "https://github.com/YashBhalodiya/wallpaper-app",
     },
+    {
+      title: "URL Shortener",
+      description:
+        "A simple and scalable URL Shortener built using Node.js and Express that converts long URLs into short, shareable links. Features include shortening long URLs into compact links, redirection, click tracking (analytics), storing URL history, and caching.",
+      tags: ["Node.js", "Express", "React", "MongoDB", "Tailwind CSS"],
+      image: UrlShortener,
+      github: "https://github.com/YashBhalodiya/url-shortener",
+    },
   ];
 
   return (
@@ -75,17 +84,15 @@ const PortfolioSection = () => {
             <div
               key={project.title}
               onClick={() => handleCardClick(project)}
-              className={`group cursor-pointer bg-white dark:bg-gray-900/50 backdrop-blur-sm border border-gray-200/20 dark:border-gray-700/30 overflow-hidden rounded-2xl shadow-xl transition-all duration-500 delay-${
-                index * 150
-              } hover:shadow-2xl hover:-translate-y-3 hover:scale-[1.02] ${
-                isVisible
+              className={`group cursor-pointer bg-white dark:bg-gray-900/50 backdrop-blur-sm border border-gray-200/20 dark:border-gray-700/30 overflow-hidden rounded-2xl shadow-xl transition-all duration-500 delay-${index * 150
+                } hover:shadow-2xl hover:-translate-y-3 hover:scale-[1.02] ${isVisible
                   ? "opacity-100 translate-y-0"
                   : "opacity-0 translate-y-10"
-              }`}
+                }`}
             >
               <div className="h-80 overflow-hidden relative">
                 {typeof project.image === "string" &&
-                project.image.startsWith("placeholder") ? (
+                  project.image.startsWith("placeholder") ? (
                   <div className="h-full bg-gradient-to-br from-blue-500/20 via-purple-500/20 to-pink-500/20 flex items-center justify-center">
                     <div className="text-center">
                       <span className="text-8xl opacity-50 mb-4 block">
@@ -199,7 +206,7 @@ const PortfolioSection = () => {
 
             <div className="p-0">
               {selectedProject.image &&
-              !selectedProject.image.toString().startsWith("placeholder") ? (
+                !selectedProject.image.toString().startsWith("placeholder") ? (
                 <div className="h-96 bg-white dark:bg-gray-900 flex items-center justify-center p-10 border-b border-gray-200/20 dark:border-gray-700/30">
                   <img
                     src={selectedProject.image}
